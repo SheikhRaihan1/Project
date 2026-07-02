@@ -25,10 +25,18 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="<?php echo $base_url?>/company" class="nav-link" >
+    <a href="<?php echo $base_url?>/booking" class="nav-link" >
         <i class="nav-icon fa fa-th"></i>
         <p>
-          company
+          booking
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/customer" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Customer
         </p>
     </a>
 </li>

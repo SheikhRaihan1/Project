@@ -23,7 +23,7 @@ class BookingController
        $booking->user_id= $_POST["user_id"];
        $booking->package_id= $_POST["package_id"];
        $booking->travel_date= $_POST["travel_date"];
-       $booking->presons= $_POST["presons"];
+       $booking->persons= $_POST["persons"];
        $booking->total_price= $_POST["total_price"];
        $booking->status= $_POST["status"];
        $booking->created_at= $_POST["created_at"];
@@ -51,7 +51,7 @@ class BookingController
        $booking->user_id= $_POST["user_id"];
        $booking->package_id= $_POST["package_id"];
        $booking->travel_date= $_POST["travel_date"];
-       $booking->presons= $_POST["presons"];
+       $booking->persons= $_POST["persons"];
        $booking->total_price= $_POST["total_price"];
        $booking->status= $_POST["status"];
        $booking->created_at= $_POST["created_at"];

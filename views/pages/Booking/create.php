@@ -3,7 +3,7 @@
     <div class="card-body">
         <h3>Create Booking</h3>
 
-        <form method="post" action="<?php echo $base_url; ?>/bookings/save">
+        <form method="post" action="<?php echo $base_url; ?>/booking/save">
 
             <div class="mb-3">
                 <label for="user_id" class="form-label">User ID</label>

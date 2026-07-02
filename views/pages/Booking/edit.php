@@ -8,7 +8,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form method="post" action="<?php echo $base_url?>/bookings/update">
+        <form method="post" action="<?php echo $base_url?>/booking/update">
             <div class="mb-3">
                 <label for="user_id" class="form-label">User ID</label> 
                 <input type="number" name="user_id" class="form-control" id="user_id" value="<?php echo $data['user_id']; ?>" required>
