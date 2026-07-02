@@ -40,3 +40,19 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/employee" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Employee
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/flight" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Flight
+        </p>
+    </a>
+</li>
