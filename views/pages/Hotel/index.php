@@ -5,9 +5,9 @@
 
 <div class="card">
     <div class="card-header">
-        <h3>customer List</h3>
-        <a href="<?php echo $base_url; ?>/customer/create" class="btn btn-primary">
-            Add New customer
+        <h3>hotel List</h3>
+        <a href="<?php echo $base_url; ?>/hotel/create" class="btn btn-primary">
+            Add New hotel
         </a>
     </div>
 
@@ -17,30 +17,28 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Passport No</th>
-                    <th>Password</th>
+                    <th>City</th>
+                    <th>Rating</th>
+                    <th>price_per_night No</th>
                     <th width="150">Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <?php if (!empty($customer)) { ?>
-                    <?php foreach ($data as $key => $customer) { ?>
+                <?php if (!empty($hotel)) { ?>
+                    <?php foreach ($data as $key => $hotel) { ?>
                         <tr>
-                            <td><?php echo $customer->id; ?></td>
-                            <td><?php echo $customer->name; ?></td>
-                            <td><?php echo $customer->email; ?></td>
-                            <td><?php echo $customer->phone; ?></td>
-                            <td><?php echo $customer->passport_no; ?></td>
-                            <td><?php echo $customer->address; ?></td>
+                            <td><?php echo $hotel->id; ?></td>
+                            <td><?php echo $hotel->name; ?></td>
+                            <td><?php echo $hotel->city; ?></td>
+                            <td><?php echo $hotel->rating; ?></td>
+                            <td><?php echo $hotel->price_per_night; ?></td>
                             <td>
-                                <a href="<?php echo $base_url; ?>/customer/edit/<?php echo $customer->id; ?>"
+                                <a href="<?php echo $base_url; ?>/hotel/edit/<?php echo $hotel->id; ?>"
                                     class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
-                                <a href="<?php echo $base_url; ?>/customer/delete/<?php echo $customer->id; ?>"
+                                <a href="<?php echo $base_url; ?>/hotel/delete/<?php echo $hotel->id; ?>"
                                     class="btn btn-sm btn-secondary">
                                     Delete
                                 </a>
@@ -50,7 +48,7 @@
                 <?php } else { ?>
                     <tr>
                         <td colspan="9" class="text-center">
-                            No customer found.
+                            No hotel found.
                         </td>
                     </tr>
                 <?php } ?>

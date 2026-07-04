@@ -3,9 +3,11 @@
   class Flight{
    
    public $id;
-   public $name;
-   public $phone;
-   public $designation;
+   public $airline;
+   public $flight_no;
+   public $source;
+   public $destination;
+   public $price;
 
 
    public function __construct()
@@ -13,10 +15,10 @@
    }
   
 
-   public function set($id,$name,$phone, $designation)
+   public function set($id,$airline,$flight_no, $source, $destination,$price)
    {
      $this->id=$id;
-     $this->airline=$airline
+     $this->airline=$airline;
      $this->flight_no=$flight_no;
      $this->source=$source;
      $this->destination=$destination;

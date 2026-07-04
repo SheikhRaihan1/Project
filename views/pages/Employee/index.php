@@ -32,11 +32,11 @@
                             <td><?php echo $employee->phone; ?></td>
                             <td><?php echo $employee->designation; ?></td>
                             <td>
-                                <a href="<?php echo $base_url; ?>/employees/edit/<?php echo $employee->id; ?>"
+                                <a href="<?php echo $base_url; ?>/employee/edit/<?php echo $employee->id; ?>"
                                     class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
-                                <a href="<?php echo $base_url; ?>/employees/delete/<?php echo $employee->id; ?>"
+                                <a href="<?php echo $base_url; ?>/employee/delete/<?php echo $employee->id; ?>"
                                     class="btn btn-sm btn-secondary">
                                     Delete
                                 </a>

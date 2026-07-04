@@ -43,16 +43,17 @@ class CustomerController
    }
 
    function update(){
+    print_r($_POST);
     if(isset($_POST["btn_submit"])){
        $customer= new Customer();
        $customer->id= $_POST["id"];
-       $customer-> name= $_POST[" name"];
+       $customer-> name= $_POST["name"];
        $customer->phone= $_POST["phone"];
        $customer->email= $_POST["email"];
        $customer->passport_no= $_POST["passport_no"];
        $customer->address= $_POST["address"];
-       $customer->update();
-         redirect();
+      //  $customer->update();
+        //  redirect();
        }
    }
 

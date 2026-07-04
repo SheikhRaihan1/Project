@@ -7,22 +7,22 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Customer Name</label>
-                <input type="number" name="name" class="form-control" id="name" required>
+                <input type="text" name="name" class="form-control" id="name" required>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Customer Email</label>
-                <input type="number" name="email" class="form-control" id="email" required>
+                <input type="text" name="email" class="form-control" id="email" required>
             </div>
 
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="date" name="phone" class="form-control" id="phone" required>
+                <input type="number" name="phone" class="form-control" id="phone" required>
             </div>
 
             <div class="mb-3">
-                <label for="passport_no" class="form-label">Persons</label>
-                <input type="number" name="passport_no" class="form-control" id="passport_no" required>
+                <label for="passport_no" class="form-label">Passport_no</label>
+                <input type="text" name="passport_no" class="form-control" id="passport_no" required>
             </div>
 
             <div class="mb-3">

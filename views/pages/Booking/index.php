@@ -40,11 +40,11 @@
                             <td><?php echo ucfirst($booking->status); ?></td>
                             <td><?php echo $booking->created_at; ?></td>
                             <td>
-                                <a href="<?php echo $base_url; ?>/bookings/edit/<?php echo $booking->id; ?>"
+                                <a href="<?php echo $base_url; ?>/booking/edit/<?php echo $booking->id; ?>"
                                     class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
-                                <a href="<?php echo $base_url; ?>/bookings/delete/<?php echo $booking->id; ?>"
+                                <a href="<?php echo $base_url; ?>/booking/delete/<?php echo $booking->id; ?>"
                                     class="btn btn-sm btn-secondary">
                                     Delete
                                 </a>

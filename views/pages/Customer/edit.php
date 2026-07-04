@@ -11,7 +11,8 @@
         <form method="post" action="<?php echo $base_url?>/customer/update">
             <div class="mb-3">
                 <label for="name" class="form-label">Customer Name</label> 
-                <input type="text" name="name" class="form-control" id="name" value="<?php echo $data['name']; ?>" required>
+                <input hidden type="text" name="id" class="form-control"  value="<?php echo $data->id; ?>" required>
+                <input type="text" name="name" class="form-control" id="name" value="<?php echo $data->name; ?>" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Customer Email</label>

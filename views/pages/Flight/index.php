@@ -36,11 +36,11 @@
                             <td><?php echo $flight->destination; ?></td>
                             <td><?php echo $flight->price; ?></td>
                             <td>
-                                <a href="<?php echo $base_url; ?>/flights/edit/<?php echo $flight->id; ?>"
+                                <a href="<?php echo $base_url; ?>/flight/edit/<?php echo $flight->id; ?>"
                                     class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
-                                <a href="<?php echo $base_url; ?>/flights/delete/<?php echo $flight->id; ?>"
+                                <a href="<?php echo $base_url; ?>/flight/delete/<?php echo $flight->id; ?>"
                                     class="btn btn-sm btn-secondary">
                                     Delete
                                 </a>

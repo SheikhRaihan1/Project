@@ -56,3 +56,19 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/hotel" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Hotel
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/package" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Package
+        </p>
+    </a>
+</li>
