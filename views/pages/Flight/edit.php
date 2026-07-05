@@ -20,8 +20,8 @@
                 <input value="<?php echo $data->flight_no ?? "" ?>" type="text"  name="flight_no" class="form-control" id="flight_no">
             </div>
             <div class="mb-3">
-                <label for="source" class="form-label">flight_no</label>
-                <input value="<?php echo $data->flight_no ?? "" ?>" type="text"  name="flight_no" class="form-control" id="flight_no">
+                <label for="source" class="form-label">Source</label>
+                <input value="<?php echo $data->source ?? "" ?>" type="text"  name="source" class="form-control" id="source">
             </div>
             <div class="mb-3">
                 <label for="destination" class="form-label">destination </label>

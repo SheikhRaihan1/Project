@@ -72,3 +72,35 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/role" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Role
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/tourpackage" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          TourPackage
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/transport" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Transport
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/user" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          User
+        </p>
+    </a>
+</li>
