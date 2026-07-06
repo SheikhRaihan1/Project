@@ -16,6 +16,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Booking NO</th>
+                    <th>Customer ID</th>
                     <th>User ID</th>
                     <th>Package ID</th>
                     <th>Travel Date</th>
@@ -32,6 +34,8 @@
                     <?php foreach ($data as $key => $booking) { ?>
                         <tr>
                             <td><?php echo $booking->id; ?></td>
+                            <td><?php echo $booking->booking_no; ?></td>
+                            <td><?php echo $booking->customer_id; ?></td>
                             <td><?php echo $booking->user_id; ?></td>
                             <td><?php echo $booking->package_id; ?></td>
                             <td><?php echo $booking->travel_date; ?></td>
@@ -48,6 +52,7 @@
                                     class="btn btn-sm btn-secondary">
                                     Delete
                                 </a>
+                               
                             </td>
                         </tr>
                     <?php } ?>

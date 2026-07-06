@@ -65,7 +65,17 @@
        return $stmt;
      }
 
-
+   public static function html_select($name){
+       global $db;
+       $stmt= $db->query("select * from hotels ");
+       $html = "";
+       $html.="<select id='$name' class='form-select' name='$name'>";
+        while ($row = $stmt->fetch_object()){
+					$html.= "<option value='$row->id'>$row->name</option>";			
+        }
+        $html.="</select>";
+       return  $html;
+     }
 
 
 

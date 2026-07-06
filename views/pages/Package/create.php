@@ -17,7 +17,11 @@
 
             <div class="mb-3">
                 <label for="destination" class="form-label">Destination</label>
-                <input type="rext" name="destination" class="form-control" id="destination" required>
+                <input type="text" name="destination" class="form-control" id="destination" required>
+            </div>
+            <div class="mb-3">
+                <label for="hotel_id" class="form-label">Hotel_id</label>
+                <input type="number" name="hotel_id" class="form-control" id="hotel_id" required>
             </div>
 
             <div class="mb-3">

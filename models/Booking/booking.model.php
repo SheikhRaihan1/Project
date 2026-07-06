@@ -3,6 +3,8 @@
   class Booking{
    
    public $id;
+   public $booking_no;
+   public $customer_id;
    public $user_id;
    public $package_id;
    public $travel_date;
@@ -16,9 +18,11 @@
    }
   
 
-   public function set($id,$user_id, $package_id,$travel_date, $persons,$total_price,$status)
+   public function set($id,$booking_no,$customer_id,$user_id, $package_id,$travel_date, $persons,$total_price,$status)
    {
      $this->id=$id;
+     $this->booking_no=$booking_no;
+     $this->customer_id=$customer_id;
      $this->user_id=$user_id;
      $this->package_id=$package_id;
      $this->travel_date=$travel_date;
@@ -31,8 +35,10 @@
 
      public function create(){
        global $db;
-       $stmt= $db->query("insert into bookings (user_id, package_id, travel_date, persons, total_price, status)
-        values('$this->user_id', 
+       $stmt= $db->query("insert into bookings (booking_no,customer_id,user_id, package_id, travel_date, persons, total_price, status)
+        values('booking_no',
+          '$this->user_id', 
+          '$this->customer_id', 
           '$this->package_id',
           '$this->travel_date',
           '$this->persons',
@@ -46,6 +52,8 @@
        global $db;
        $stmt= $db->query("update bookings set 
           
+          booking_no= '$this->booking_no', 
+          customer_id= '$this->customer_id', 
           user_id= '$this->user_id', 
           package_id= '$this->package_id',
           travel_date= '$this->travel_date',

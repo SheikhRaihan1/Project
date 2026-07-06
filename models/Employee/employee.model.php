@@ -61,8 +61,26 @@
        $stmt= $db->query("delete  from employees where id= $id");
        return $stmt;
      }
+ public static function html_select($name="employee_id",$selected="")
+{
+    global $db;
 
+    $stmt=$db->query("SELECT id,name FROM employees");
 
+    $html="<select class='form-select' name='$name' id='$name'>";
+    $html.="<option value=''>Select Employee</option>";
+
+    while($row=$stmt->fetch_object()){
+
+        $select=($selected==$row->id)?"selected":"";
+
+        $html.="<option value='$row->id' $select>$row->name</option>";
+    }
+
+    $html.="</select>";
+
+    return $html;
+}
 
 
 

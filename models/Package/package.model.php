@@ -6,6 +6,7 @@
    public $title;
    public $description;
    public $destination;
+   public $hotel_id;
    public $duration;
    public $price;
    public $max_persons;
@@ -19,11 +20,13 @@
    }
   
 
-   public function set($id,$title, $description, $duration, $price, $max_persons, $image, $status, $created_at)
+   public function set($id,$title, $description,$destination,$hotel_id, $duration, $price, $max_persons, $image, $status, $created_at)
    {
      $this->id=$id;
      $this->title=$title;
      $this->description=$description;
+     $this->destination=$destination;
+     $this->hotel_id=$hotel_id;
      $this->duration=$duration;
      $this->price=$price;
      $this->max_persons=$max_persons;
@@ -36,9 +39,11 @@
 
      public function create(){
        global $db;
-       $stmt= $db->query("insert into packages (title, description, duration, price, max_persons, image, status, created_at)
+       $stmt= $db->query("insert into packages (title, description,destination,hotel_id, duration, price, max_persons, image, status, created_at)
         values('$this->title', 
           '$this->description',
+          '$this->destination',
+          '$this->hotel_id',
           '$this->duration',
           '$this->price',
           '$this->max_persons',
@@ -55,6 +60,8 @@
           
           title= '$this->title', 
           description= '$this->description',
+          destination= '$this->destination',
+          hotel_id= '$this->hotel_id',
           duration= '$this->duration',
           price= '$this->price',
           max_persons= '$this->max_persons',
@@ -82,11 +89,31 @@
        return $stmt;
      }
 
+  public static function html_select($name = "package_id", $selected = "")
+{
+    global $db;
 
+    $stmt = $db->query("SELECT id, title, destination, price
+                        FROM packages
+                        WHERE status='active'
+                        ORDER BY title");
 
+    $html = "<select id='$name' name='$name' class='form-select'>";
+    $html .= "<option value=''>Select Package</option>";
 
+    while ($row = $stmt->fetch_object()) {
+
+        $select = ($selected == $row->id) ? "selected" : "";
+
+        $html .= "<option value='$row->id' $select>
+                    $row->title - $row->destination (৳$row->price)
+                  </option>";
+    }
+
+    $html .= "</select>";
+
+    return $html;
+}
 
   }
-
-
 ?>

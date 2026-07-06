@@ -20,6 +20,8 @@ class BookingController
 
        if(isset($_POST["btn_submit"])){
        $booking= new Booking();
+       $booking->booking_no= $_POST["booking_no"];
+       $booking->customer_id= $_POST["customer_id"];
        $booking->user_id= $_POST["user_id"];
        $booking->package_id= $_POST["package_id"];
        $booking->travel_date= $_POST["travel_date"];
@@ -48,6 +50,8 @@ class BookingController
     if(isset($_POST["btn_submit"])){
        $booking= new Booking();
        $booking->id= $_POST["id"];
+       $booking->booking_no= $_POST["booking_no"];
+       $booking->customer_id= $_POST["customer_id"];
        $booking->user_id= $_POST["user_id"];
        $booking->package_id= $_POST["package_id"];
        $booking->travel_date= $_POST["travel_date"];

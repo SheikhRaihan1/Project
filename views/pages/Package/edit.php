@@ -23,6 +23,10 @@
                 <input value="<?php echo $data->destination ?? "" ?>" type="text"  name="destination" class="form-control" id="destination">
             </div>
             <div class="mb-3">
+                <label for="hotel_id" class="form-label">Hotel_id</label>
+                <input value="<?php echo $data->hotel_id ?? "" ?>" type="text"  name="hotel_id" class="form-control" id="hotel_id">
+            </div>
+            <div class="mb-3">
                 <label for="duration" class="form-label">Duration (Days) </label>
                 <input value="<?php echo $data->duration ?? "" ?>" type="number"  name="duration" class="form-control" id="duration">
             </div>
