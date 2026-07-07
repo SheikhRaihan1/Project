@@ -27,6 +27,14 @@
                 <input value="<?php echo $data->hotel_id ?? "" ?>" type="text"  name="hotel_id" class="form-control" id="hotel_id">
             </div>
             <div class="mb-3">
+                <label for="transport_id" class="form-label">Transport_id</label>
+                <input value="<?php echo $data->transport_id ?? "" ?>" type="text"  name="transport_id" class="form-control" id="transport_id">
+            </div>
+            <div class="mb-3">
+                <label for="flight_id" class="form-label">Flight_id</label>
+                <input value="<?php echo $data->hoteflight_idl_id ?? "" ?>" type="text"  name="flight_id" class="form-control" id="flight_id">
+            </div>
+            <div class="mb-3">
                 <label for="duration" class="form-label">Duration (Days) </label>
                 <input value="<?php echo $data->duration ?? "" ?>" type="number"  name="duration" class="form-control" id="duration">
             </div>

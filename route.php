@@ -385,5 +385,3 @@ function redirect($method = "index", $message = "")
     //echo "<script>alert('$base_url/$class/$method')</script>";
 }
 
-
-include("footer.php");

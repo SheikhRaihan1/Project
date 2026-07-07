@@ -116,18 +116,25 @@
 
 					<div class="col-md-3 mb-3">
 						<label class="form-label">Duration</label>
-						<input type="text" class="form-control" value="5 Days" readonly>
+						<input type="text" id="duration" class="form-control" value="" readonly>
 					</div>
 
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Hotel</label>
-                        <?php echo Package::html_select("name"); ?>
-						<!-- <input type="text" class="form-control" readonly value="Grand Palace"> -->
+						<input type="text" id="hotel" class="form-control" readonly >
+					</div>
+					<div class="col-md-6 mb-3">
+						<label class="form-label">Transport</label>
+						<input type="text" id="transport" class="form-control" readonly >
 					</div>
 
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Flight</label>
-						<input type="text" class="form-control" readonly value="Biman BG101">
+						<input type="text" id="flight" class="form-control" readonly>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label class="form-label">Price</label>
+						<input type="number" name="total_price" id="price" class="form-control" readonly >
 					</div>
 
 				</div>
@@ -245,5 +252,46 @@
 	</div>
 
 </div>
+<script>
 
+
+
+$("#package_id").change(function () {
+
+    let id = $(this).val();
+
+    $.ajax({
+
+        url: "/project/travel_agency/booking/packageInfo",
+
+        type: "GET",
+
+        data: {
+            id: id
+        },
+
+        dataType: "json",
+
+        success: function (data) {
+
+            console.log(data);
+
+            $("#hotel").val(data.hotel_name);
+            $("#flight").val(data.flight_no);
+            $("#transport").val(data.vehicle_type);
+            $("#duration").val(data.duration + " Days");
+            $("#price").val(data.price);
+
+        },
+
+        error: function (xhr) {
+
+            console.log(xhr.responseText);
+
+        }
+
+    });
+
+});
+</script>
 

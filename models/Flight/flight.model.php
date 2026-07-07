@@ -71,6 +71,26 @@
        return $stmt;
      }
 
+ public static function html_select($name="flight_id",$selected="")
+{
+    global $db;
+
+    $stmt = $db->query("SELECT id, flight_no FROM flights");
+
+    $html="<select class='form-select' name='$name' id='$name'>";
+    $html.="<option value=''>Select Flight</option>";
+
+    while($row=$stmt->fetch_object()){
+
+        $select=($selected==$row->id)?"selected":"";
+
+        $html.="<option value='$row->id' $select>$row->flight_no</option>";
+    }
+
+    $html.="</select>";
+
+    return $html;
+}
 
 
 

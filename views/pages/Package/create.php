@@ -23,6 +23,14 @@
                 <label for="hotel_id" class="form-label">Hotel_id</label>
                 <input type="number" name="hotel_id" class="form-control" id="hotel_id" required>
             </div>
+            <div class="mb-3">
+                <label for="transport_id" class="form-label">Transport_id</label>
+                <input type="number" name="transport_id" class="form-control" id="transport_id" required>
+            </div>
+            <div class="mb-3">
+                <label for="flight_id" class="form-label">Flight_id</label>
+                <input type="number" name="flight_id" class="form-control" id="flight_id" required>
+            </div>
 
             <div class="mb-3">
                 <label for="duration" class="form-label">duration</label>

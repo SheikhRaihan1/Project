@@ -63,5 +63,14 @@ class BookingController
          redirect();
        }
    }
+ public function packageInfo($params)
+{
+    $id = $params["id"];
 
+    echo json_encode(
+        Package::getPackageInfo($id)
+    );
+
+    exit;
+}
 }
