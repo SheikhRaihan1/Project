@@ -77,17 +77,17 @@
 
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Passport No</label>
-						<input type="text" class="form-control" readonly value="P123456">
+						<input type="text" id="passport" class="form-control" readonly value >
 					</div>
 
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Phone</label>
-						<input type="text" class="form-control" readonly value="01711111111">
+						<input type="text" id="phone" class="form-control" readonly value="">
 					</div>
 
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Email</label>
-						<input type="email" class="form-control" readonly value="john@gmail.com">
+						<input type="email" id="email" class="form-control" readonly value="">
 					</div>
 
 				</div>
@@ -288,6 +288,38 @@ $("#package_id").change(function () {
 
             console.log(xhr.responseText);
 
+        }
+
+    });
+
+});
+
+// customer 
+$("#customer_id").change(function(){
+
+    let id = $(this).val();
+
+    $.ajax({
+
+        url: "/project/travel_agency/customer/customerInfo/" + id,
+
+        type: "GET",
+
+        success: function(response){
+
+            console.log(response);  
+
+            let data = JSON.parse(response);
+
+            $("#passport").val(data.passport_no);
+            $("#phone").val(data.phone);
+            $("#email").val(data.email);
+        
+
+        },
+
+        error:function(xhr){
+            console.log(xhr.responseText);
         }
 
     });

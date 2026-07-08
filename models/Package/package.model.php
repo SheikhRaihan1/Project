@@ -28,8 +28,8 @@ class Package
     $this->description = $description;
     $this->destination = $destination;
     $this->hotel_id = $hotel_id;
-    $this->hotel_id = $flight_id;
-    $this->hotel_id = $transport_id;
+    $this->flight_id = $flight_id;
+    $this->transport_id = $transport_id;
     $this->duration = $duration;
     $this->price = $price;
     $this->max_persons = $max_persons;
