@@ -63,5 +63,9 @@ class BookingController
          redirect();
        }
    }
-
+ public function package($id, $params = [], $files = [])
+{
+    echo json_encode(Package::getPackageInfo($id));
+    exit;
+}
 }

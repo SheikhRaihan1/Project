@@ -21,6 +21,8 @@
                 <th>Description</th>
                 <th>Destination</th>
                 <th>Hotel ID</th>
+                <th>Transport ID</th>
+                <th>Flight ID</th>
                 <th>Duration</th>
                 <th>Price</th>
                 <th>Max Persons</th>
@@ -39,6 +41,8 @@
                             <td><?php echo $package->description; ?></td>
                             <td><?php echo $package->destination; ?></td>
                             <td><?php echo $package->hotel_id; ?></td>
+                            <td><?php echo $package->transport_id; ?></td>
+                            <td><?php echo $package->flight_id; ?></td>
                             <td><?php echo $package->duration; ?></td>
                             <td><?php echo $package->price; ?></td>
                             <td><?php echo $package->max_persons; ?></td>

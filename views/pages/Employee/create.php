@@ -7,12 +7,12 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label"> Name</label>
-                <input type="number" name="name" class="form-control" id="name" required>
+                <input type="text" name="name" class="form-control" id="name" required>
             </div>
 
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="date" name="phone" class="form-control" id="phone" required>
+                <input type="number" name="phone" class="form-control" id="phone" required>
             </div>
 
             <div class="mb-3">

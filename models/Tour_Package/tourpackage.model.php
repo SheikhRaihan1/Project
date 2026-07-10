@@ -149,5 +149,7 @@ class TourPackage extends Model implements JsonSerializable{
 		$html.="</table>";
 		return $html;
 	}
+
+
 }
 ?>

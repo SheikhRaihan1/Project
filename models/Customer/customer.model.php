@@ -69,11 +69,11 @@
      }
 
 
-     public static function html_select($name){
+     public static function html_select($customer_id){
        global $db;
        $stmt= $db->query("select * from customers ");
        $html = "";
-       $html.="<select id='$name' class='form-select' name='$name'>";
+       $html.="<select id='$customer_id' class='form-select' name='$customer_id'>";
         while ($row = $stmt->fetch_object()){
 					$html.= "<option value='$row->id'>$row->name</option>";			
         }

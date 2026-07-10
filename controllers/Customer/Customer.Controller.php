@@ -20,7 +20,7 @@ class CustomerController
 
        if(isset($_POST["btn_submit"])){
        $customer= new Customer();
-       $customer-> name= $_POST[" name"];
+       $customer-> name= $_POST["name"];
        $customer->phone= $_POST["phone"];
        $customer->email= $_POST["email"];
        $customer->passport_no= $_POST["passport_no"];
@@ -56,5 +56,13 @@ class CustomerController
         //  redirect();
        }
    }
+   public function customerInfo($id,$params=[],$files=[])
+{
+    header("Content-Type:application/json");
+
+    echo json_encode(Customer::find($id));
+
+    exit;
+}
 
 }
