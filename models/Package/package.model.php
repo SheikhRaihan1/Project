@@ -101,30 +101,16 @@ class Package
     return $stmt;
   }
 
-  public static function html_select($name = "package_id", $selected = "")
-  {
-    global $db;
-
-    $stmt = $db->query("SELECT id, title, destination, price
-                        FROM packages
-                        WHERE status='active'
-                        ORDER BY title");
-
-    $html = "<select id='$name' name='$name' class='form-select'>";
-    $html .= "<option value=''>Select Package</option>";
-
-    while ($row = $stmt->fetch_object()) {
-
-      $select = ($selected == $row->id) ? "selected" : "";
-
-      $html .= "<option value='$row->id' $select>
-                    $row->title - $row->destination (৳$row->price)
-                  </option>";
-    }
-
-    $html .= "</select>";
-
-    return $html;
-  }
+  public static function html_select($pckage_id){
+       global $db;
+       $stmt= $db->query("select * from packages ");
+       $html = "";
+       $html.="<select id='$pckage_id' class='form-select' name='$pckage_id'>";
+        while ($row = $stmt->fetch_object()){
+					$html.= "<option value='$row->id'>$row->title</option>";			
+        }
+        $html.="</select>";
+       return  $html;
+     }
 
 }

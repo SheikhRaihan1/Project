@@ -255,32 +255,27 @@
 <script>
 
 
-
-$("#package_id").change(function () {
+// package
+$("#package_id").on("change", function () {
 
     let id = $(this).val();
 
     $.ajax({
 
-        url: "/project/travel_agency/booking/packageInfo",
+        url: `<?php echo $base_url?>/api/customer/package_find/${id}`,
 
-        type: "GET",
+         method: "GET",
 
-        data: {
-            id: id
-        },
+        success: function(response){
 
-        dataType: "json",
+            console.log(response); 
+           let data = JSON.parse(response);
 
-        success: function (data) {
-
-            console.log(data);
-
-            $("#hotel").val(data.hotel_name);
-            $("#flight").val(data.flight_no);
-            $("#transport").val(data.vehicle_type);
-            $("#duration").val(data.duration + " Days");
-            $("#price").val(data.price);
+            $("#hotel").val(data.package.hotel_name);
+            $("#flight").val(data.package.flight_no);
+            $("#transport").val(data.package.vehicle_type);
+            $("#duration").val(data.package.duration + " Days");
+            $("#price").val(data.package.price);
 
         },
 
@@ -295,27 +290,25 @@ $("#package_id").change(function () {
 });
 
 // customer 
-$("#customer_id").change(function(){
+$("#customer_id").on("change", function(){
 
     let id = $(this).val();
+	// alert(id)
 
     $.ajax({
 
-        url: "/project/travel_agency/customer/customerInfo/" + id,
+        url: `<?php echo $base_url?>/api/customer/find/${id}`,
 
-        type: "GET",
+        method: "GET",
 
         success: function(response){
 
-            console.log(response);  
-
+            console.log(response); 
             let data = JSON.parse(response);
 
-            $("#passport").val(data.passport_no);
-            $("#phone").val(data.phone);
-            $("#email").val(data.email);
-        
-
+            $("#passport").val(data.customer.passport_no);
+            $("#phone").val(data.customer.phone);
+            $("#email").val(data.customer.email);
         },
 
         error:function(xhr){

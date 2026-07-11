@@ -19,33 +19,18 @@ class CustomerApi{
 		Customer::delete($data["id"]);
 		echo json_encode(["success" => "yes"]);
 	}
-	function save($data,$file=[]){
-		$customer=new Customer();
-		$customer->name=$data["name"];
-		$customer->mobile=$data["mobile"];
-		$customer->email=$data["email"];
-		$customer->address=$data["address"];
-		$customer->photo=upload($file["photo"], "../img",$data["name"]);
 
-		$customer->save();
-		echo json_encode(["success" => "yes"]);
-	}
-	function update($data,$file=[]){
-		$customer=new Customer();
-		$customer->id=$data["id"];
-		$customer->name=$data["name"];
-		// $customer->mobile=$data["mobile"];
-		$customer->email=$data["email"];
-		// $customer->updated_at=$now;
-		// $customer->address=$data["address"];
-		// if(isset($file["photo"]["name"])){
-		// 	$customer->photo=upload($file["photo"], "../img",$data["name"]);
-		// }else{
-		// 	$customer->photo=Customer::find($data["id"])->photo;
-		// }
 
-		$customer->update();
-		echo json_encode(["success" => "yes"]);
+	function package_find(){
+		// print_r($_REQUEST['id']);
+        $package=  Package::find($_REQUEST['id']);
+		$flight= Flight::find( $package->flight_id);
+		$hotel= Hotel::find($package->hotel_id);
+		$transport= Transport::find($package->transport_id);
+
+
+	   echo 	json_encode(compact("package", "flight", "hotel", "transport"));
 	}
+	
 }
 ?>

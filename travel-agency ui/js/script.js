@@ -70,14 +70,44 @@ videoBtn.forEach(btn => {
 
 // Review Slider
 
-var swiper = new Swiper(".review-slider", {
+// var swiper = new Swiper(".review-slider", {
+//     spaceBetween: 20,
+//     loop: true,
+//     // autoplay: {
+//     //     delay: 3000,
+//     //     disableOnInteraction: false,
+//     // },
+
+//     breakpoints: {
+
+//         640: {
+//             slidesPerView: 1,
+//         },
+
+//         768: {
+//             slidesPerView: 2,
+//         },
+
+//         1024: {
+//             slidesPerView: 3,
+//         }
+
+//     }
+
+// });
+// 
+// 
+
+var swiper = new Swiper('.review-slider ', {
+    pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+    },
     spaceBetween: 20,
-    loop: true,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
     },
-
     breakpoints: {
 
         640: {
@@ -93,37 +123,36 @@ var swiper = new Swiper(".review-slider", {
         }
 
     }
-
 });
 
 // Brand Slider
 
 var brandSwiper = new Swiper(".brand-slider", {
 
-    spaceBetween:20,
-    loop:true,
+    spaceBetween: 20,
+    loop: true,
 
-    autoplay:{
-        delay:2500,
-        disableOnInteraction:false,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
     },
 
-    breakpoints:{
+    breakpoints: {
 
-        450:{
-            slidesPerView:2,
+        450: {
+            slidesPerView: 2,
         },
 
-        768:{
-            slidesPerView:3,
+        768: {
+            slidesPerView: 3,
         },
 
-        991:{
-            slidesPerView:4,
+        991: {
+            slidesPerView: 4,
         },
 
-        1200:{
-            slidesPerView:5,
+        1200: {
+            slidesPerView: 5,
         }
 
     }

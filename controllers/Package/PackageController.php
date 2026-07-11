@@ -63,5 +63,13 @@ class PackageController
          redirect();
        }
    }
+     public function packageInfo($id,$params=[],$files=[])
+{
+    header("Content-Type:application/json");
+
+    echo json_encode(Package::find($id));
+
+    exit;
+}
 
 }
