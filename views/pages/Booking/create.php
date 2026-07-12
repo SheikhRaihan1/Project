@@ -265,15 +265,14 @@ $("#package_id").on("change", function () {
         url: `<?php echo $base_url?>/api/customer/package_find/${id}`,
 
          method: "GET",
-
         success: function(response){
 
-            console.log(response); 
+            // console.log(response); 
            let data = JSON.parse(response);
-
-            $("#hotel").val(data.package.hotel_name);
-            $("#flight").val(data.package.flight_no);
-            $("#transport").val(data.package.vehicle_type);
+           console.log(data);
+            $("#hotel").val(data.hotel.name +"|"+ data.hotel.price_per_night);
+            $("#flight").val(data.flight.flight_no);
+            $("#transport").val(data.transport.vehicle_type);
             $("#duration").val(data.package.duration + " Days");
             $("#price").val(data.package.price);
 
