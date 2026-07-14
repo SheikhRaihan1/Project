@@ -104,3 +104,11 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="<?php echo $base_url?>/payments" class="nav-link" >
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+          Payment
+        </p>
+    </a>
+</li>
