@@ -30,7 +30,7 @@
 
      public function create(){
        global $db;
-       $stmt= $db->query("insert into flights (name, phone, designation)
+       $stmt= $db->query("insert into flights (airline, flight_no, source, destination, price  )
         values(
           '$this->airline',
           '$this->flight_no',
