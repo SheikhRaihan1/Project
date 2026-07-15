@@ -55,7 +55,7 @@
 
 		<div class="card-body">
 
-			<form action="booking_save.php" method="post">
+		
 
 				<div class="section-title">
 					Customer Information
@@ -111,7 +111,7 @@
 
 					<div class="col-md-3 mb-3">
 						<label class="form-label">Travel Date</label>
-						<input type="date" class="form-control" name="travel_date">
+						<input type="date" class="form-control travel_date" name="travel_date">
 					</div>
 
 					<div class="col-md-3 mb-3">
@@ -147,7 +147,7 @@
 
 					<div class="col-md-3 mb-3">
 						<label class="form-label">Booking Date</label>
-						<input type="date" class="form-control" name="booking_date">
+						<input type="date" class="form-control booking_date"  name="booking_date">
 					</div>
 
 					<div class="col-md-3 mb-3">
@@ -236,15 +236,15 @@
 
 				</table>
 
-				<div class="section-title">
+				<div class="section-title ">
 					Additional Notes
 				</div>
 
-				<textarea class="form-control" rows="4" name="remarks"></textarea>
+				<textarea class="form-control additional_note" rows="4" name="remarks"></textarea>
 
 				<div class="mt-4 text-end">
 
-					<button class="btn btn-success">
+					<button class="btn btn-success btn_save_booking">
 						Save Booking
 					</button>
 
@@ -258,7 +258,7 @@
 
 				</div>
 
-			</form>
+	
 
 		</div>
 
@@ -353,4 +353,66 @@
 		});
 
 	});
+
+
+
+   	$(".btn_save_booking").on("click", function() {
+
+     $customer_id= $("#customer_id").val();
+	 $package_id= $("#package_id").val();
+	 $travel_date= $(".travel_date").val();
+	 $booking_date= $(".booking_date").val();
+	 $employee_id= $("#employee_id").val();
+	 $grand_total= $("#grand_total").text();
+	 $discount=  parseFloat($("#discount").val()) || 0;
+	 $vat= parseFloat($("#vat").val()) || 0;
+	 $advance= parseFloat($("#advance_payment").val()) || 0; 
+	 $payment_method_id=  $("#payment_method").val();
+	 $additional_note=$(".additional_note").val();
+
+
+	//  let data={
+
+	//  $customer_id,
+	//  $package_id,
+	//  $travel_date,
+	//  $booking_date,
+	//  $employee_id,
+	//  $grand_total,
+	//  $discount,
+	//  $vat,
+	//  $advance,
+	//  $payment_method_id,
+	//  $additional_note
+	//  }
+
+      $.ajax({
+		 url:"<?php echo $base_url?>/api/booking/booking_process/",
+		 method:"Post",
+		 data:{	 $customer_id,
+				$package_id,
+				$travel_date,
+				$booking_date,
+				$employee_id,
+				$grand_total,
+				$discount,
+				$vat,
+				$advance,
+				$payment_method_id,
+				$additional_note},
+		  success:function(res){
+            console.log(res);
+			
+		  },
+		  error:function(err){
+           console.log(err);
+		   
+		  }
+	  });
+	  
+
+
+	})
+
+
 </script>
